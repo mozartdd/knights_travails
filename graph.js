@@ -16,9 +16,12 @@ function knightMoves(start, end) {
       throw new Error('x and y coordinates must be positive integer between 0 and 7.');
     }
 
-    if(x === end[0] && y === end[1]) console.log(`=> You made it in ${path.length - 1} moves! Here's your path:`);
     // If reached end coordinates return path
-    if(x === end[0] && y === end[1]) return path;
+    if(x === end[0] && y === end[1]) 
+      {
+        console.log(`=> You made it in ${path.length - 1} moves! Here's your path:`);
+        return console.log(path);
+      }
 
     for (let [moveX, moveY] of moves) {
       let newX = x + moveX;
@@ -34,4 +37,4 @@ function knightMoves(start, end) {
   }
 }
 
-console.log(knightMoves([0, 0], [7, 7]));
+knightMoves([0, 0], [7, 7]);
